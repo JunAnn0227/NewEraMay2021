@@ -1,9 +1,14 @@
-package com.example.neweramay2021;
+package com.example.neweramay2021.listview;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.neweramay2021.R;
 
 import java.util.ArrayList;
 
@@ -39,5 +44,12 @@ public class SimpleListviewActivity extends AppCompatActivity {
     private void initListview(){
         FruitAdapter adapter = new FruitAdapter(SimpleListviewActivity.this, arrayData);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
+                String userClick = arrayData.get(i);
+                Toast.makeText(SimpleListviewActivity.this, "You Clicked On: " + userClick, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

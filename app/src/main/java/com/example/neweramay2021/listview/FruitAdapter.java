@@ -1,4 +1,4 @@
-package com.example.neweramay2021;
+package com.example.neweramay2021.listview;
 
 import android.content.Context;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.neweramay2021.R;
 
 import java.util.ArrayList;
 
