@@ -20,17 +20,12 @@ public class RecyclerviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview);
         findViews();
-        setListeners();
         initRecyclerView();
 
     }
 
     private void findViews(){
         recyclerView = findViewById(R.id.recylerview);
-    }
-
-    private void setListeners(){
-
     }
 
     private void initRecyclerView(){
