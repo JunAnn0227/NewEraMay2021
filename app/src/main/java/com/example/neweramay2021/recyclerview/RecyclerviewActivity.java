@@ -29,10 +29,13 @@ public class RecyclerviewActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView(){
-        for(int i = 0; i < 50; i++){
-            Contact contact = new Contact("Ann","0123456789");
-            contactArrayList.add(contact);
-        }
+        contactArrayList.add(new Contact("BK", "1232534467"));
+        contactArrayList.add(new Contact("John", "1122233887"));
+        contactArrayList.add(new Contact("Jack", "1254422312"));
+        contactArrayList.add(new Contact("Ali", "1234581818"));
+        contactArrayList.add(new Contact("ABC", "2918210118"));
+        contactArrayList.add(new Contact("CDE", "129291821"));
+        contactArrayList.add(new Contact("EFG", "9199128191"));
 
 
         ContactAdapter adapter = new ContactAdapter(RecyclerviewActivity.this, contactArrayList);

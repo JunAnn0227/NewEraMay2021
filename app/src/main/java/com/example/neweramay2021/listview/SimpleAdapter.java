@@ -13,11 +13,11 @@ import com.example.neweramay2021.R;
 
 import java.util.ArrayList;
 
-class FruitAdapter extends ArrayAdapter {
+public class SimpleAdapter extends ArrayAdapter {
     private ArrayList<String> data;
     private Context context;
 
-    FruitAdapter(Context context, ArrayList<String> list){
+    SimpleAdapter(Context context, ArrayList<String> list){
         super(context, R.layout.single_row_simple_listview);
         this.data = list;
         this.context = context;
@@ -28,6 +28,7 @@ class FruitAdapter extends ArrayAdapter {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View mainView;
         String fruitString = data.get(position);
+
         if(convertView == null) {
             mainView = View.inflate(context, R.layout.single_row_simple_listview, null);
             ViewHolder holder = new ViewHolder();
