@@ -32,7 +32,6 @@ public class StudentlistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_studentlist);
         findViews();
         initAdapterView();
-
     }
 
     private void findViews(){
@@ -58,6 +57,7 @@ public class StudentlistActivity extends AppCompatActivity {
                     JSONObject resObject = new JSONObject(responseString);
                     JSONArray resArray = resObject.getJSONArray("response");
 
+
                     for(int i=0; i < resArray.length(); i++){
                         JSONObject singleObject = resArray.getJSONObject(i);
                         Student student = new Student();
@@ -70,10 +70,11 @@ public class StudentlistActivity extends AppCompatActivity {
                         studentArrayList.add(student);
                     }
 
+
                     runOnUiThread(() -> {
-                        StudentAdapter adapter = new StudentAdapter(StudentlistActivity.this, studentArrayList);
-                        recyclerView.setAdapter(adapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(StudentlistActivity.this));
+                            StudentAdapter adapter = new StudentAdapter(StudentlistActivity.this, studentArrayList);
+                            recyclerView.setAdapter(adapter);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(StudentlistActivity.this));
                     });
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.neweramay2021.R;
 
 import org.jetbrains.annotations.NotNull;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder>{
     private ArrayList<Student> studentList;
     private Context context;
+
 
     public StudentAdapter(Context context, ArrayList<Student> list) {
         this.studentList = list;
@@ -40,6 +43,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         holder.tvMatric.setText(student.getMatric());
         holder.tvName.setText(student.getName());
         holder.tvCourseName.setText(student.getCourseName());
+
+        Glide.with(context)
+                .load(student.getPhoto())
+                .into(holder.imgStudent);
     }
 
     @Override
@@ -49,6 +56,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView tvMatric, tvName, tvCourseName;
+        public ImageView imgStudent;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -56,6 +64,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             tvName = itemView.findViewById(R.id.tvName);
             tvMatric = itemView.findViewById(R.id.tvMatricNo);
             tvCourseName = itemView.findViewById(R.id.tvCourseName);
+            imgStudent = itemView.findViewById(R.id.imgStudent);
         }
     }
 }
