@@ -3,6 +3,7 @@ package com.example.neweramay2021.studentrecyclerview;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -75,6 +76,9 @@ public class StudentlistActivity extends AppCompatActivity {
                             StudentAdapter adapter = new StudentAdapter(StudentlistActivity.this, studentArrayList);
                             recyclerView.setAdapter(adapter);
                             recyclerView.setLayoutManager(new LinearLayoutManager(StudentlistActivity.this));
+
+                            RecyclerView.ItemDecoration divider = new DividerItemDecoration(StudentlistActivity.this, DividerItemDecoration.VERTICAL);
+                            recyclerView.addItemDecoration(divider);
                     });
                 } catch (Exception e) {
                     e.printStackTrace();
